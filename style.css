@@ -4,7 +4,8 @@
     height: 100px;
     width: 100px;
     background-color: red;
-    animation: move 5s linear 0s infinite reverse;
+    animation: move 3s linear 0s infinite;
+    animation-direction: alternate-reverse;  
 }
 
 #eye-1 {
