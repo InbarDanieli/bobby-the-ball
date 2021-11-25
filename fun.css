@@ -1,0 +1,57 @@
+#circle {
+    border: 8px solid black;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    animation: move 5s linear 0s infinite reverse;
+}
+
+#eye-1 {
+    margin: 20px 0px 0px 50px;
+    width: 20px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#eye-1::before ,#eye-2::before {
+    content: "";
+    border: 5px solid black;
+    border-radius: 50%;
+    border-top: 50px;
+    border-right: -30px;
+    border-left: -20px;
+    border-bottom: 40px;
+    background-color: black;
+}
+
+
+#eye-2 {
+    margin: -35px 0px 0px 10px;
+    width: 20px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 50%;
+    background-color: white;
+
+}
+
+
+#mouth {
+    width: 20px;
+    height: 10px;
+    border: 3px solid black;
+    border-radius: 5px 5px 50px 50px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+@keyframes move
+{
+    0%{margin-left: 0px;
+    transform: rotate(0deg);}
+    100%{margin-left: 300px;
+        transform: rotate(360deg);}
+}
