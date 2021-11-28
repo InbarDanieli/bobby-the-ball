@@ -1,38 +1,52 @@
 #circle {
+    margin-top: 40vh;
     border: 8px solid black;
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 300px;
+    width: 300px;
     background-color: red;
     animation: move 3s linear 0s infinite;
-    animation-direction: alternate-reverse;  
+    animation-direction: alternate-reverse;
 }
 
+.click:checked~#circle {
+    animation: move 3s linear 0s infinite, jump 1s ease 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+.click~#circle {
+    animation: move 3s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+
+
 #eye-1 {
-    margin: 20px 0px 0px 50px;
-    width: 20px;
-    height: 30px;
+    position: relative;
+    margin: 60px 0px 0px 150px;
+    width: 60px;
+    height: 90px;
     border: 3px solid black;
     border-radius: 50%;
     background-color: white;
 }
 
-#eye-1::before ,#eye-2::before {
+#eye-1::before, #eye-2::before {
     content: "";
-    border: 5px solid black;
+    border: 15px solid black;
     border-radius: 50%;
-    border-top: 50px;
-    border-right: -30px;
-    border-left: -20px;
-    border-bottom: 40px;
+    position: absolute;
+    top: 10px;
+    height: 20px;
     background-color: black;
 }
 
 
 #eye-2 {
-    margin: -35px 0px 0px 10px;
-    width: 20px;
-    height: 30px;
+    position: relative;
+    margin: -90px 0px 0px 30px;
+    width: 60px;
+    height: 90px;
     border: 3px solid black;
     border-radius: 50%;
     background-color: white;
@@ -41,18 +55,37 @@
 
 
 #mouth {
-    width: 20px;
-    height: 10px;
+    width: 60px;
+    height: 30px;
     border: 3px solid black;
     border-radius: 5px 5px 50px 50px;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 39px;
+    margin-left: 90px;
+    background-color: white;
 }
 
-@keyframes move
-{
-    0%{margin-left: 0px;
-    transform: rotate(0deg);}
-    100%{margin-left: 300px;
-        transform: rotate(360deg);}
+@keyframes move {
+    0% {
+        margin-left: 0vw;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        margin-left: calc(100vw - 340px);
+        transform: rotate(360deg);
+    }
 }
+
+@keyframes jump {
+    0% {
+        margin-top: 0px;
+    }
+
+    100% {
+        margin-top: 285px;
+    }
+}
+
+/*     animation: jump 0.5s ease 0s infinite;
+    animation-direction: alternate-reverse;  
+ */
