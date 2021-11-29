@@ -1,3 +1,49 @@
+
+/* body
+{
+    animation: rainbow 3s ease 0s infinite;
+    animation-direction: alternate;
+} */
+
+
+#SP7:checked~#circle 
+{
+    animation: move 7s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+#SP6:checked~#circle
+{
+    animation: move 6s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+#SP5:checked~#circle
+{
+    animation: move 5s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+#SP4:checked~#circle
+{
+    animation: move 4s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+#SP3:checked~#circle
+{
+    animation: move 3s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+#SP2:checked~#circle
+{
+    animation: move 2s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+#SP1:checked~#circle
+{
+    animation: move 1s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+
+
 #circle {
     margin-top: 40vh;
     border: 8px solid black;
@@ -9,13 +55,9 @@
     animation-direction: alternate-reverse;
 }
 
-.click:checked~#circle {
-    animation: move 3s linear 0s infinite, jump 1s ease 0s infinite;
-    animation-direction: alternate-reverse;
-}
 
-.click~#circle {
-    animation: move 3s linear 0s infinite;
+#click:checked~#circle {
+    animation: move 3s linear 0s infinite, jump 1s ease 0s infinite;
     animation-direction: alternate-reverse;
 }
 
@@ -84,6 +126,17 @@
     100% {
         margin-top: 285px;
     }
+}
+
+@keyframes rainbow
+{
+    0%{background-color: red;}
+    16%{background-color: orange;}
+    32%{background-color: yellow;}
+    48%{background-color: greenyellow;}
+    64%{background-color: rgb(94, 94, 255);}
+    80%{background-color: blue;}
+    100%{background-color: purple;}
 }
 
 /*     animation: jump 0.5s ease 0s infinite;
