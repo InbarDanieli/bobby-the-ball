@@ -1,5 +1,6 @@
 #circle {
-    margin-top: 40vh;
+    position: absolute;
+    top: 300px;
     border: 8px solid black;
     border-radius: 50%;
     height: 300px;
@@ -8,6 +9,7 @@
     animation: move 3s linear 0s infinite;
     animation-direction: alternate-reverse;
 }
+
 
 .click:checked~#circle {
     animation: move 3s linear 0s infinite, jump 1s ease 0s infinite;
@@ -78,11 +80,11 @@
 
 @keyframes jump {
     0% {
-        margin-top: 0px;
+        top: 0px;
     }
 
     100% {
-        margin-top: 285px;
+        top: 300px;
     }
 }
 
