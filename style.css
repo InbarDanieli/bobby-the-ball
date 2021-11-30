@@ -1,3 +1,12 @@
+/* body
+{
+    animation: rainbow 4s linear 0s infinite;
+    animation-direction: alternate;
+      animation-fill-mode: forwards;
+} */
+
+
+/* creating bobby: */
 #circle {
     margin-top: 40vh;
     border: 8px solid black;
@@ -8,17 +17,6 @@
     animation: move 3s linear 0s infinite;
     animation-direction: alternate-reverse;
 }
-
-.click:checked~#circle {
-    animation: move 3s linear 0s infinite, jump 1s ease 0s infinite;
-    animation-direction: alternate-reverse;
-}
-
-.click~#circle {
-    animation: move 3s linear 0s infinite;
-    animation-direction: alternate-reverse;
-}
-
 
 
 #eye-1 {
@@ -31,17 +29,6 @@
     background-color: white;
 }
 
-#eye-1::before, #eye-2::before {
-    content: "";
-    border: 15px solid black;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    height: 20px;
-    background-color: black;
-}
-
-
 #eye-2 {
     position: relative;
     margin: -90px 0px 0px 30px;
@@ -53,6 +40,15 @@
 
 }
 
+#eye-1::before, #eye-2::before {
+    content: "";
+    border: 15px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    height: 20px;
+    background-color: black;
+}
 
 #mouth {
     width: 60px;
@@ -64,28 +60,118 @@
     background-color: white;
 }
 
+
+
+/* change the speed */
+#SP7:checked~#circle {
+    animation: move 7s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+#SP6:checked~#circle {
+    animation: move 6s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+#SP5:checked~#circle {
+    animation: move 5s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+#SP4:checked~#circle {
+    animation: move 4s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+#SP3:checked~#circle {
+    animation: move 3s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+#SP2:checked~#circle {
+    animation: move 2s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+#SP1:checked~#circle {
+    animation: move 1s linear 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+
+/* jumping animation*/
+#click:checked~#circle {
+    animation: move 3s linear 0s infinite, jump 1s ease 0s infinite;
+    animation-direction: alternate-reverse;
+}
+
+
+/* tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+border: none;}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    height: fit-content;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 25px;
+    left: -40px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.tooltip .tooltiptext::after {
+    transform: rotate(180deg);
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* animations */
+
 @keyframes move {
     0% {
         margin-left: 0vw;
-        transform: rotate(0deg);
-    }
+        transform: rotate(0deg);}
 
     100% {
         margin-left: calc(100vw - 340px);
-        transform: rotate(360deg);
-    }
+        transform: rotate(360deg);}
 }
+
 
 @keyframes jump {
-    0% {
-        margin-top: 0px;
-    }
-
-    100% {
-        margin-top: 285px;
-    }
+    0% {margin-top: 0px;}
+    100% {margin-top: 285px;}
 }
 
-/*     animation: jump 0.5s ease 0s infinite;
-    animation-direction: alternate-reverse;  
- */
+
+@keyframes rainbow
+{
+    0%{background-color: hsl(0, 100%, 50%);}
+    20%{background-color: hsl(60, 100%, 50%);}
+    40%{background-color: hsl(120, 100%, 50%);}
+    60%{background-color: hsl(180, 100%, 50%);}
+    80%{background-color: hsl(240, 100%, 50%);}
+    100%{background-color: hsl(300, 100%, 50%);}
+}
