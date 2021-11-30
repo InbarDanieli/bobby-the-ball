@@ -1,8 +1,8 @@
 /* body
 {
-    background-color: hsl(var(--hue,0),100%,50%);
-    animation: rainbow 4s linear 0s infinite, hudy 3s ease 0s infinite;
+    animation: rainbow 4s linear 0s infinite;
     animation-direction: alternate;
+      animation-fill-mode: forwards;
 } */
 
 
@@ -17,6 +17,7 @@
     animation: move 3s linear 0s infinite;
     animation-direction: alternate-reverse;
 }
+
 
 #eye-1 {
     position: relative;
@@ -109,8 +110,7 @@
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
-}
+border: none;}
 
 .tooltip .tooltiptext {
     visibility: hidden;
@@ -147,49 +147,31 @@
 }
 
 
-
 /* animations */
 
 @keyframes move {
     0% {
         margin-left: 0vw;
-        transform: rotate(0deg);
-    }
+        transform: rotate(0deg);}
 
     100% {
         margin-left: calc(100vw - 340px);
-        transform: rotate(360deg);
-    }
+        transform: rotate(360deg);}
 }
+
 
 @keyframes jump {
-    0% {
-        margin-top: 0px;
-    }
-
-    100% {
-        margin-top: 285px;
-    }
+    0% {margin-top: 0px;}
+    100% {margin-top: 285px;}
 }
 
-/* @keyframes rainbow
+
+@keyframes rainbow
 {
     0%{background-color: hsl(0, 100%, 50%);}
-    15%{background-color: hsl(39, 100%, 50%);}
-    30%{background-color: hsl(60, 100%, 50%);}
-    45%{background-color: hsl(118, 92%, 36%);}
-    60%{background-color: hsl(199, 85%, 42%);}
-    75%{background-color: hsl(261, 96%, 37%);}
-    90%{background-color: hsl(281, 93%, 34%);}
-    100%{background-color: hsl(360, 100%, 50%);}
-} */
-
-/* @keyframes hudy {
-    0% {
-        --hue: 0;
-    }
-
-    100% {
-        --hue: 360;
-    }
-} */
+    20%{background-color: hsl(60, 100%, 50%);}
+    40%{background-color: hsl(120, 100%, 50%);}
+    60%{background-color: hsl(180, 100%, 50%);}
+    80%{background-color: hsl(240, 100%, 50%);}
+    100%{background-color: hsl(300, 100%, 50%);}
+}
